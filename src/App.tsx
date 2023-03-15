@@ -6,9 +6,8 @@ import { modeTypes, themeTypes } from './types/theme';
 // Pages
 import Signin from './pages/Signin';
 import Home from './pages/Home';
-import EventDescription from './pages/event/Descriptions';
-import EventDiscussion from './pages/event/Discussion';
 import EventSection from './pages/EventSection';
+import EventTicket from './pages/EventTicket';
 
 function App() {
   const [theme, setTheme] = useState<themeTypes>('ios');
@@ -70,6 +69,7 @@ function App() {
           <Route path="/" element={<Signin />} />
           <Route path="/home" element={<Home />} />
           <Route path="/events/:event_id" element={<EventSection />} />
+          <Route path="/events/:event_id/ticket" element={<EventTicket />} />
           <Route path="/events/:event_id/:section" element={<EventSection />} />
         </Routes>
       </Router>

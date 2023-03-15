@@ -5,11 +5,10 @@ import EventDiscussion from './event/Discussion';
 import EventGallery from './event/Gallery';
 
 const EventSection = () => {
-  const { event_id } = useParams();
   const { section } =
     useParams<{ section?: 'details' | 'discussion' | 'gallery' }>();
   return (
-    <EventLayout>
+    <EventLayout showSegments={true}>
       {!section && <EventDetails />}
       {section === 'details' && <EventDetails />}
       {section === 'discussion' && <EventDiscussion />}
