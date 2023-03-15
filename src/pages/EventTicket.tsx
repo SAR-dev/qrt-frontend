@@ -46,15 +46,16 @@ const payment_methods = [
 
 const EventTicket = () => {
   const [activeId, setActiveId] = useState('');
+
   return (
     <EventLayout showSegments={false}>
-      <Block inset strong className='my-4'>
+      <Block inset strong className="my-4">
         <EventSummary />
       </Block>
-      <Block inset strong className='my-4'>
+      <Block inset strong className="my-4">
         <EventDisclaimers />
       </Block>
-      <Block inset strong className='my-4'>
+      <Block inset strong className="my-4">
         <div className="space-y-3">
           <div className="form-control">
             <label className="cursor-pointer flex items-center space-x-2">
@@ -82,7 +83,7 @@ const EventTicket = () => {
           </div>
         </div>
       </Block>
-      <Block inset strong className='my-4'>
+      <Block inset strong className="my-4">
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex space-x-2 items-center font-semibold">
@@ -108,7 +109,10 @@ const EventTicket = () => {
           </div>
 
           <div className="flex justify-center">
-            <button className="btn btn-sm btn-primary w-full">
+            <button
+              className="btn btn-sm btn-primary w-full"
+              disabled={activeId === ''}
+            >
               Continue Payment
             </button>
           </div>

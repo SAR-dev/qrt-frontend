@@ -38,7 +38,7 @@ const EventSummary = () => {
           </a>
         </div>
       </div>
-      <p>
+      <p className="mt-2">
         Current documentation doesn't cover the process of compilation of Konsta
         UI app to Cordova or Capacitor app. It is about Konsta UI and how to use
         all of its components. To learn more about how to compile your app to
