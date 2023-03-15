@@ -49,13 +49,13 @@ const EventTicket = () => {
 
   return (
     <EventLayout showSegments={false}>
-      <Block inset strong className="my-4">
+      <Block inset strong className="mt-4 mb-4">
         <EventSummary />
       </Block>
-      <Block inset strong className="my-4">
+      <Block inset strong className="mt-4 mb-4">
         <EventDisclaimers />
       </Block>
-      <Block inset strong className="my-4">
+      <Block inset strong className="mt-4 mb-4">
         <div className="space-y-3">
           <div className="form-control">
             <label className="cursor-pointer flex items-center space-x-2">
@@ -83,7 +83,7 @@ const EventTicket = () => {
           </div>
         </div>
       </Block>
-      <Block inset strong className="my-4">
+      <Block inset strong className="mt-4 mb-4">
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex space-x-2 items-center font-semibold">
