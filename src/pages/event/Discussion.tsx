@@ -1,6 +1,5 @@
 import PostCard from '@src/components/PostCard';
 import { Block } from 'konsta/react';
-import { ImBlog } from 'react-icons/im';
 import { TfiCommentsSmiley, TfiComments, TfiClipboard } from 'react-icons/tfi';
 
 const EventDiscussion = () => {
