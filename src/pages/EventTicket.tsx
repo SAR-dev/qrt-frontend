@@ -108,7 +108,7 @@ const EventTicket = () => {
           </div>
 
           <div className="flex justify-center">
-            <button className="btn btn-sm btn-primary w-48">
+            <button className="btn btn-sm btn-primary w-full">
               Continue Payment
             </button>
           </div>
