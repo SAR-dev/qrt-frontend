@@ -1,6 +1,8 @@
 import { Page } from 'konsta/react';
 import LiveSVG from '@src/images/LiveSVG';
 import { useNavigate } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
+import { GoogleLogin } from '@react-oauth/google';
 
 export default function Signin() {
   const navigate = useNavigate();
@@ -12,27 +14,21 @@ export default function Signin() {
           <LiveSVG />
         </div>
         <div className="flex flex-col space-y-3 z-0">
-          <button
+          <GoogleLogin
+            onSuccess={(credentialResponse) => {
+              console.log(credentialResponse);
+            }}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          />
+          {/* <button
             type="button"
-            className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 shadow-lg"
+            className="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center shadow-lg space-x-1"
             onClick={() => navigate('/home')}
           >
-            <svg
-              className="w-4 h-4 mr-2 -ml-1"
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fab"
-              data-icon="google"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 488 512"
-            >
-              <path
-                fill="currentColor"
-                d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
-              ></path>
-            </svg>
-            Sign in with Google
+            <FcGoogle size={20} />
+            <p>Sign in with Google</p>
           </button>
           <button
             type="button"
@@ -54,7 +50,7 @@ export default function Signin() {
               ></path>
             </svg>
             Sign in with Facebook
-          </button>
+          </button> */}
         </div>
       </div>
     </Page>
