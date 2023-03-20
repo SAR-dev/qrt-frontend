@@ -8,6 +8,7 @@ import Signin from './pages/Signin';
 import Home from './pages/Home';
 import EventSection from './pages/EventSection';
 import EventTicket from './pages/EventTicket';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function App() {
   const [theme, setTheme] = useState<themeTypes>('ios');
@@ -63,17 +64,19 @@ function App() {
   }, [theme]);
 
   return (
-    <KonstaApp theme={theme} safeAreas={!inIFrame}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Signin />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/events/:event_id" element={<EventSection />} />
-          <Route path="/events/:event_id/ticket" element={<EventTicket />} />
-          <Route path="/events/:event_id/:section" element={<EventSection />} />
-        </Routes>
-      </Router>
-    </KonstaApp>
+    <GoogleOAuthProvider clientId='412190183346-1bev16hi3n99lbr85350mkeshtj5hjrp.apps.googleusercontent.com'>
+      <KonstaApp theme={theme} safeAreas={!inIFrame}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Signin />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/events/:event_id" element={<EventSection />} />
+            <Route path="/events/:event_id/ticket" element={<EventTicket />} />
+            <Route path="/events/:event_id/:section" element={<EventSection />} />
+          </Routes>
+        </Router>
+      </KonstaApp>
+    </GoogleOAuthProvider>
   );
 }
 
